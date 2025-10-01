@@ -322,12 +322,7 @@ export default function Services() {
                         Let us discuss your construction needs and bring your vision to life with our expert services.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link
-                            href="/contact"
-                            className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-                        >
-                            Get Free Quote
-                        </Link>
+
                         <Link
                             href="/projects"
                             className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300"

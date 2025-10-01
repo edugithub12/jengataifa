@@ -139,12 +139,6 @@ export default function Contact() {
                             >
                                 Send Message
                             </button>
-                            <a
-                                href="tel:+254718811661"
-                                className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300"
-                            >
-                                Call Now
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -418,27 +412,6 @@ export default function Contact() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Emergency Contact Banner */}
-            <section className="py-12 bg-gradient-to-r from-blue-700 to-blue-900 text-white">
-                <div className="container mx-auto px-6 text-center">
-                    <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-                        <div className="flex items-center space-x-4">
-                            <div className="text-4xl">🚨</div>
-                            <div className="text-left">
-                                <h3 className="text-xl font-bold">Emergency Construction Services</h3>
-                                <p className="text-blue-100">Available 24/7 for urgent construction needs</p>
-                            </div>
-                        </div>
-                        <a
-                            href="tel:+254718811661"
-                            className="bg-white text-blue-700 px-8 py-3 rounded-full font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-                        >
-                            Call Emergency Line
-                        </a>
                     </div>
                 </div>
             </section>

@@ -52,26 +52,20 @@ export default function About() {
             specialty: "Strategic Planning"
         },
         {
-            name: "Sarah Johnson",
-            role: "Head Architect",
+            name: "Edwin Muthanga",
+            role: "Developer",
             image: "/images/team/architect.jpg",
-            experience: "15+ years",
-            specialty: "Innovative Design"
+            experience: "3 years",
+            specialty: "web development"
         },
         {
-            name: "Mike Chen",
-            role: "Construction Manager",
+            name: "Derrick Kanyoko",
+            role: "Website Developer",
             image: "/images/team/manager.jpg",
-            experience: "12+ years",
-            specialty: "Project Execution"
-        },
-        {
-            name: "Emily Davis",
-            role: "Design Consultant",
-            image: "/images/team/designer.jpg",
-            experience: "10+ years",
-            specialty: "Client Relations"
+            experience: "3 years",
+            specialty: "Web Development"
         }
+
     ];
 
     const values = [
@@ -185,9 +179,6 @@ export default function About() {
                                 >
                                     View Our Work
                                 </Link>
-                                <button className="border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-full font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-300">
-                                    Download Company Profile
-                                </button>
                             </div>
                         </div>
                         <div className="relative">

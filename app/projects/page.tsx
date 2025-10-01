@@ -447,12 +447,6 @@ export default function Projects() {
                         >
                             Start Your Project
                         </Link>
-                        <a
-                            href="tel:+254718811661"
-                            className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300"
-                        >
-                            Call Now
-                        </a>
                     </div>
                 </div>
             </section>
