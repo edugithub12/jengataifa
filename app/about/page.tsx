@@ -50,8 +50,28 @@ export default function About() {
             image: "/images/team/ceo.jpg",
             experience: "20+ years",
             specialty: "Strategic Planning"
-        }
-
+        },
+        {
+            name: "Lawi Miniu",
+            role: "Head Architect",
+            image: "/images/team/ceo.jpg",
+            experience: "10+ years",
+            specialty: "Innovative design"
+        },
+        {
+            name: "Mukiri Naftali",
+            role: "construction manager",
+            image: "/images/team/ceo.jpg",
+            experience: "15+ years",
+            specialty: "project execution"
+        },
+        {
+            name: "Simon Maina",
+            role: "Design consultant",
+            image: "/images/team/ceo.jpg",
+            experience: "7 years",
+            specialty: "client relations"
+        },
     ];
 
     const values = [
@@ -78,18 +98,18 @@ export default function About() {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-green-50">
             {/* Hero Section */}
             <section
                 className="relative py-32 bg-cover bg-center bg-fixed"
                 style={{ backgroundImage: "url('/images/tractor.jpg')" }}
             >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-800/50 to-blue-900/30"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 via-black/60 to-red-900/40"></div>
                 <div className="relative z-10 container mx-auto px-6">
                     <div className={`max-w-4xl transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                         }`}>
                         <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
-                            About <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Gigateam</span>
+                            About <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">Gigateam</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
                             Building dreams into reality with over {counter.experience}+ years of excellence in construction and innovation
@@ -97,13 +117,13 @@ export default function About() {
                         <div className="flex flex-wrap gap-4">
                             <Link
                                 href="/contact"
-                                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                                className="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:from-green-700 hover:to-green-800"
                             >
                                 Get In Touch
                             </Link>
                             <button
                                 onClick={() => document.getElementById('our-story')?.scrollIntoView({ behavior: 'smooth' })}
-                                className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300"
+                                className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 hover:border-red-500"
                             >
                                 Our Story
                             </button>
@@ -113,32 +133,36 @@ export default function About() {
             </section>
 
             {/* Stats Section */}
-            <section className="py-16 bg-gradient-to-r from-blue-700 to-blue-900 text-white">
+            <section className="py-16 bg-gradient-to-r from-gray-900 to-black text-white">
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                        <div className="transform hover:scale-110 transition-transform duration-300">
-                            <div className="text-4xl md:text-5xl font-bold mb-2">
+                        <div className="transform hover:scale-110 transition-transform duration-300 group">
+                            <div className="text-4xl md:text-5xl font-bold mb-2 group-hover:text-green-400 transition-colors duration-300">
                                 {counter.projects}+
                             </div>
-                            <div className="text-lg opacity-90">Projects Completed</div>
+                            <div className="text-lg opacity-90 group-hover:text-red-300 transition-colors duration-300">Projects Completed</div>
+                            <div className="mt-2 w-8 h-0.5 bg-red-500 mx-auto transform group-hover:scale-x-150 transition-transform duration-300"></div>
                         </div>
-                        <div className="transform hover:scale-110 transition-transform duration-300">
-                            <div className="text-4xl md:text-5xl font-bold mb-2">
+                        <div className="transform hover:scale-110 transition-transform duration-300 group">
+                            <div className="text-4xl md:text-5xl font-bold mb-2 group-hover:text-green-400 transition-colors duration-300">
                                 {counter.experience}+
                             </div>
-                            <div className="text-lg opacity-90">Years Experience</div>
+                            <div className="text-lg opacity-90 group-hover:text-red-300 transition-colors duration-300">Years Experience</div>
+                            <div className="mt-2 w-8 h-0.5 bg-red-500 mx-auto transform group-hover:scale-x-150 transition-transform duration-300"></div>
                         </div>
-                        <div className="transform hover:scale-110 transition-transform duration-300">
-                            <div className="text-4xl md:text-5xl font-bold mb-2">
+                        <div className="transform hover:scale-110 transition-transform duration-300 group">
+                            <div className="text-4xl md:text-5xl font-bold mb-2 group-hover:text-green-400 transition-colors duration-300">
                                 {counter.clients}+
                             </div>
-                            <div className="text-lg opacity-90">Happy Clients</div>
+                            <div className="text-lg opacity-90 group-hover:text-red-300 transition-colors duration-300">Happy Clients</div>
+                            <div className="mt-2 w-8 h-0.5 bg-red-500 mx-auto transform group-hover:scale-x-150 transition-transform duration-300"></div>
                         </div>
-                        <div className="transform hover:scale-110 transition-transform duration-300">
-                            <div className="text-4xl md:text-5xl font-bold mb-2">
+                        <div className="transform hover:scale-110 transition-transform duration-300 group">
+                            <div className="text-4xl md:text-5xl font-bold mb-2 group-hover:text-green-400 transition-colors duration-300">
                                 {counter.team}+
                             </div>
-                            <div className="text-lg opacity-90">Expert Team</div>
+                            <div className="text-lg opacity-90 group-hover:text-red-300 transition-colors duration-300">Expert Team</div>
+                            <div className="mt-2 w-8 h-0.5 bg-red-500 mx-auto transform group-hover:scale-x-150 transition-transform duration-300"></div>
                         </div>
                     </div>
                 </div>
@@ -150,7 +174,7 @@ export default function About() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
                             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                                Our <span className="text-blue-600">Story</span>
+                                Our <span className="text-green-600">Story</span>
                             </h2>
                             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                                 Founded in 2008, Gigateam Solutions began as a small family-run business with a big vision: to transform the construction industry through innovation, quality, and unwavering commitment to client satisfaction.
@@ -161,43 +185,49 @@ export default function About() {
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Link
                                     href="/projects"
-                                    className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-center"
+                                    className="bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-center hover:from-green-700 hover:to-green-800"
                                 >
                                     View Our Work
+                                </Link>
+                                <Link
+                                    href="/services"
+                                    className="border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-center hover:border-red-500 hover:text-red-700"
+                                >
+                                    Our Services
                                 </Link>
                             </div>
                         </div>
                         <div className="relative">
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="space-y-4">
-                                    <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl p-6 h-48 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
-                                        <span className="text-4xl">🏗️</span>
+                                    <div className="bg-gradient-to-br from-green-100 to-green-200 rounded-2xl p-6 h-48 flex items-center justify-center transform hover:scale-105 transition-transform duration-300 group">
+                                        <span className="text-4xl group-hover:scale-110 transition-transform duration-300">🏗️</span>
                                     </div>
-                                    <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-6 h-32 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
-                                        <span className="text-3xl">📈</span>
+                                    <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-6 h-32 flex items-center justify-center transform hover:scale-105 transition-transform duration-300 group">
+                                        <span className="text-3xl group-hover:scale-110 transition-transform duration-300">📈</span>
                                     </div>
                                 </div>
                                 <div className="space-y-4 pt-8">
-                                    <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-6 h-32 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
-                                        <span className="text-3xl">🌟</span>
+                                    <div className="bg-gradient-to-br from-red-100 to-red-200 rounded-2xl p-6 h-32 flex items-center justify-center transform hover:scale-105 transition-transform duration-300 group">
+                                        <span className="text-3xl group-hover:scale-110 transition-transform duration-300">🌟</span>
                                     </div>
-                                    <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl p-6 h-48 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
-                                        <span className="text-4xl">🔧</span>
+                                    <div className="bg-gradient-to-br from-green-100 to-green-200 rounded-2xl p-6 h-48 flex items-center justify-center transform hover:scale-105 transition-transform duration-300 group">
+                                        <span className="text-4xl group-hover:scale-110 transition-transform duration-300">🔧</span>
                                     </div>
                                 </div>
                             </div>
-                            <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl blur-lg opacity-20 -z-10"></div>
+                            <div className="absolute -inset-4 bg-gradient-to-r from-green-400 to-red-500 rounded-2xl blur-lg opacity-20 -z-10"></div>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Mission & Vision Tabs */}
-            <section className="py-20 bg-gradient-to-br from-blue-50 to-blue-100">
+            <section className="py-20 bg-gradient-to-br from-green-50 to-gray-100">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                            Our <span className="text-blue-600">Purpose</span>
+                            Our <span className="text-green-600">Purpose</span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                             Driving construction excellence through clear vision and unwavering mission
@@ -216,8 +246,8 @@ export default function About() {
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
                                     className={`flex items-center space-x-3 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 ${activeTab === tab.id
-                                        ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg transform scale-105'
-                                        : 'bg-white text-gray-700 hover:bg-blue-100 hover:text-blue-700'
+                                        ? 'bg-gradient-to-r from-green-600 to-green-700 text-white shadow-lg transform scale-105'
+                                        : 'bg-white text-gray-700 hover:bg-green-100 hover:text-green-700 border border-gray-200'
                                         }`}
                                 >
                                     <span className="text-xl">{tab.icon}</span>
@@ -276,7 +306,7 @@ export default function About() {
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                            Our <span className="text-blue-600">Values</span>
+                            Our <span className="text-green-600">Values</span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                             The principles that guide every decision we make and every project we undertake
@@ -287,17 +317,18 @@ export default function About() {
                         {values.map((value, index) => (
                             <div
                                 key={index}
-                                className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 text-center group"
+                                className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 text-center group hover:border-green-300"
                             >
                                 <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                                     {value.icon}
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                                <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-green-600 transition-colors duration-300">
                                     {value.title}
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed">
                                     {value.description}
                                 </p>
+                                <div className="mt-4 w-12 h-1 bg-red-500 mx-auto transform group-hover:scale-x-150 transition-transform duration-300"></div>
                             </div>
                         ))}
                     </div>
@@ -309,7 +340,7 @@ export default function About() {
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                            Meet Our <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Team</span>
+                            Meet Our <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">Team</span>
                         </h2>
                         <p className="text-xl text-gray-300 max-w-2xl mx-auto">
                             The passionate professionals behind Gigateam Solutions success
@@ -320,18 +351,43 @@ export default function About() {
                         {teamMembers.map((member, index) => (
                             <div
                                 key={index}
-                                className="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-700 text-center group"
+                                className="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-700 text-center group hover:border-green-600"
                             >
-                                <div className="w-32 h-32 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-4xl">
+                                <div className="w-32 h-32 bg-gradient-to-br from-green-600 to-green-700 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-4xl group-hover:from-green-700 group-hover:to-green-800 transition-all duration-300">
                                     👤
                                 </div>
-                                <h3 className="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors duration-300">
+                                <h3 className="text-2xl font-bold mb-2 group-hover:text-green-400 transition-colors duration-300">
                                     {member.name}
                                 </h3>
-                                <p className="text-blue-400 font-semibold mb-3">{member.role}</p>
+                                <p className="text-green-400 font-semibold mb-3">{member.role}</p>
                                 <div className="space-y-2 text-gray-300">
-                                    <p className="text-sm">Experience: {member.experience}</p>
-                                    <p className="text-sm">Specialty: {member.specialty}</p>
+                                    <p className="text-sm flex items-center justify-center">
+                                        <span className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                                        Experience: {member.experience}
+                                    </p>
+                                    <p className="text-sm flex items-center justify-center">
+                                        <span className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                                        Specialty: {member.specialty}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Team Stats */}
+                    <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                        {[
+                            { number: "100%", label: "Certified Professionals" },
+                            { number: "24/7", label: "Project Support" },
+                            { number: "50+", label: "Technical Skills" },
+                            { number: "5★", label: "Average Rating" }
+                        ].map((stat, index) => (
+                            <div key={index} className="bg-gray-800 rounded-xl p-6 transform hover:scale-105 transition-transform duration-300 group">
+                                <div className="text-2xl md:text-3xl font-bold text-green-400 mb-2 group-hover:text-green-300">
+                                    {stat.number}
+                                </div>
+                                <div className="text-gray-300 text-sm group-hover:text-red-300 transition-colors duration-300">
+                                    {stat.label}
                                 </div>
                             </div>
                         ))}
@@ -340,27 +396,41 @@ export default function About() {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 bg-gradient-to-r from-blue-700 to-blue-900 text-white">
+            <section className="py-20 bg-gradient-to-r from-green-700 to-green-900 text-white">
                 <div className="container mx-auto px-6 text-center">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                        Ready to Build <span className="text-blue-300">Together</span>?
+                        Ready to Build <span className="text-green-300">Together</span>?
                     </h2>
-                    <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                    <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
                         Join the growing family of satisfied clients who trust Gigateam Solutions for their construction needs.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             href="/contact"
-                            className="bg-white text-blue-900 px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                            className="bg-white text-green-900 px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-gray-100"
                         >
                             Start Your Project
                         </Link>
                         <Link
                             href="/services"
-                            className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300"
+                            className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-green-900 transition-all duration-300 hover:border-red-500"
                         >
                             Explore Services
                         </Link>
+                    </div>
+                    <div className="mt-8 flex justify-center space-x-6 text-green-200">
+                        <div className="flex items-center">
+                            <span className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                            Free Consultation
+                        </div>
+                        <div className="flex items-center">
+                            <span className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                            Project Planning
+                        </div>
+                        <div className="flex items-center">
+                            <span className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                            Cost Estimation
+                        </div>
                     </div>
                 </div>
             </section>

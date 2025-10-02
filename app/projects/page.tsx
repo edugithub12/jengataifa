@@ -55,12 +55,12 @@ export default function Projects() {
             id: 3,
             title: "Hostel Construction",
             description: "Modern student accommodation facility designed to provide comfortable living and learning environments with enhanced security and amenities.",
-            image: "/images/kitale_hostels.jpg",
+            image: "/images/Kitale_hostels.jpg",
             category: "educational",
             location: "Kitale, Kenya",
             duration: "14 Months",
             size: "8,500 sq ft",
-            status: "completed",
+            status: "ongoing",
             features: ["Study Rooms", "Common Areas", "Security", "Wi-Fi Ready"]
         },
         {
@@ -76,7 +76,7 @@ export default function Projects() {
             features: ["Swimming Pool", "Smart Security", "Landscaped Gardens", "Garage"]
         },
         {
-            id: 9,
+            id: 5,
             title: "Space-Efficient Modern Kitchen",
             description: "Innovative compact kitchen design maximizing functionality in limited space with clever storage solutions and multi-functional features.",
             image: "/images/modern_kitchen.jpg",
@@ -88,7 +88,7 @@ export default function Projects() {
             features: ["Fold-down Counters", "Vertical Storage", "Compact Appliances", "Multi-purpose Island", "Sliding Pantry", "Space-saving Solutions"]
         },
         {
-            id: 8,
+            id: 6,
             title: "Premium Glass Office Partitions",
             description: "Elegant glass partition installation creating bright, open-feel workspaces while maintaining acoustic privacy and modern aesthetic appeal throughout the office.",
             image: "/images/office_partition.jpg",
@@ -130,8 +130,6 @@ export default function Projects() {
         { id: 'residential', label: 'Residential', count: projects.filter(p => p.category === 'residential').length },
         { id: 'commercial', label: 'Commercial', count: projects.filter(p => p.category === 'commercial').length },
         { id: 'educational', label: 'Educational', count: projects.filter(p => p.category === 'educational').length },
-        { id: 'healthcare', label: 'Healthcare', count: projects.filter(p => p.category === 'healthcare').length },
-        { id: 'industrial', label: 'Industrial', count: projects.filter(p => p.category === 'industrial').length },
         { id: 'mixed', label: 'Mixed Use', count: projects.filter(p => p.category === 'mixed').length }
     ];
 
@@ -142,8 +140,8 @@ export default function Projects() {
     const getStatusColor = (status: string) => {
         switch (status) {
             case 'completed': return 'bg-green-500';
-            case 'ongoing': return 'bg-blue-500';
-            case 'upcoming': return 'bg-blue-400';
+            case 'ongoing': return 'bg-yellow-500';
+            case 'upcoming': return 'bg-red-500';
             default: return 'bg-gray-500';
         }
     };
@@ -158,15 +156,15 @@ export default function Projects() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-green-50">
             {/* Hero Section */}
-            <section className="relative py-32 bg-gradient-to-r from-blue-900 to-black text-white">
+            <section className="relative py-32 bg-gradient-to-r from-green-900 via-black to-red-900 text-white">
                 <div className="absolute inset-0 bg-[url('/images/construction-pattern.png')] opacity-10"></div>
                 <div className="relative z-10 container mx-auto px-6 text-center">
                     <div className={`transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                         }`}>
                         <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                            Our <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Projects</span>
+                            Our <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">Projects</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
                             Showcasing our commitment to excellence through a diverse portfolio of successful construction projects
@@ -174,13 +172,13 @@ export default function Projects() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <button
                                 onClick={() => document.getElementById('projects-grid')?.scrollIntoView({ behavior: 'smooth' })}
-                                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                                className="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:from-green-700 hover:to-green-800"
                             >
                                 Explore Portfolio
                             </button>
                             <Link
                                 href="/contact"
-                                className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300"
+                                className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 hover:border-red-500"
                             >
                                 Start Your Project
                             </Link>
@@ -190,7 +188,7 @@ export default function Projects() {
             </section>
 
             {/* Stats Section */}
-            <section className="py-16 bg-white border-b border-gray-200">
+            <section className="py-16 bg-gradient-to-r from-gray-900 to-black text-white">
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                         {[
@@ -199,9 +197,14 @@ export default function Projects() {
                             { number: "98%", label: "Client Satisfaction" },
                             { number: "500+", label: "Team Members" }
                         ].map((stat, index) => (
-                            <div key={index} className="transform hover:scale-110 transition-transform duration-300">
-                                <div className="text-4xl md:text-5xl font-bold text-gray-800 mb-2">{stat.number}</div>
-                                <div className="text-lg text-gray-600">{stat.label}</div>
+                            <div key={index} className="transform hover:scale-110 transition-transform duration-300 group">
+                                <div className="text-4xl md:text-5xl font-bold mb-2 group-hover:text-green-400 transition-colors duration-300">
+                                    {stat.number}
+                                </div>
+                                <div className="text-lg opacity-90 group-hover:text-red-300 transition-colors duration-300">
+                                    {stat.label}
+                                </div>
+                                <div className="mt-2 w-8 h-0.5 bg-red-500 mx-auto transform group-hover:scale-x-150 transition-transform duration-300"></div>
                             </div>
                         ))}
                     </div>
@@ -213,7 +216,7 @@ export default function Projects() {
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                            Project <span className="text-blue-600">Portfolio</span>
+                            Project <span className="text-green-600">Portfolio</span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
                             Discover our diverse range of construction projects across various sectors and locations
@@ -225,9 +228,9 @@ export default function Projects() {
                                 <button
                                     key={category.id}
                                     onClick={() => setActiveFilter(category.id)}
-                                    className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${activeFilter === category.id
-                                        ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg'
-                                        : 'bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-700'
+                                    className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 border ${activeFilter === category.id
+                                        ? 'bg-gradient-to-r from-green-600 to-green-700 text-white shadow-lg border-transparent'
+                                        : 'bg-gray-100 text-gray-700 hover:bg-green-100 hover:text-green-700 border-gray-200 hover:border-green-300'
                                         }`}
                                 >
                                     {category.label} ({category.count})
@@ -241,7 +244,7 @@ export default function Projects() {
                         {filteredProjects.map((project, index) => (
                             <div
                                 key={project.id}
-                                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 overflow-hidden group cursor-pointer"
+                                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 overflow-hidden group cursor-pointer hover:border-green-300"
                                 onClick={() => setSelectedProject(project)}
                                 style={{
                                     animationDelay: `${index * 100}ms`
@@ -258,14 +261,19 @@ export default function Projects() {
                                     />
 
                                     {/* Status Badge */}
-                                    <div className={`absolute top-4 right-4 ${getStatusColor(project.status)} text-white px-3 py-1 rounded-full text-sm font-semibold`}>
+                                    <div className={`absolute top-4 right-4 ${getStatusColor(project.status)} text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg`}>
                                         {getStatusText(project.status)}
+                                    </div>
+
+                                    {/* Category Badge */}
+                                    <div className="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-semibold capitalize">
+                                        {project.category}
                                     </div>
 
                                     {/* Overlay */}
                                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-500 flex items-center justify-center">
                                         <div className="transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                            <button className="bg-white text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
+                                            <button className="bg-white text-green-900 px-6 py-3 rounded-full font-semibold hover:bg-green-600 hover:text-white transition-all duration-300 shadow-lg">
                                                 View Details
                                             </button>
                                         </div>
@@ -274,7 +282,7 @@ export default function Projects() {
 
                                 {/* Project Content */}
                                 <div className="p-6">
-                                    <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                                    <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-green-600 transition-colors duration-300">
                                         {project.title}
                                     </h3>
                                     <p className="text-gray-600 mb-4 leading-relaxed">
@@ -284,15 +292,15 @@ export default function Projects() {
                                     {/* Project Meta */}
                                     <div className="space-y-2 mb-4">
                                         <div className="flex items-center space-x-2 text-sm text-gray-500">
-                                            <span>📍</span>
+                                            <span className="w-4 h-4">📍</span>
                                             <span>{project.location}</span>
                                         </div>
                                         <div className="flex items-center space-x-2 text-sm text-gray-500">
-                                            <span>⏱️</span>
+                                            <span className="w-4 h-4">⏱️</span>
                                             <span>{project.duration}</span>
                                         </div>
                                         <div className="flex items-center space-x-2 text-sm text-gray-500">
-                                            <span>📐</span>
+                                            <span className="w-4 h-4">📐</span>
                                             <span>{project.size}</span>
                                         </div>
                                     </div>
@@ -302,13 +310,13 @@ export default function Projects() {
                                         {project.features.slice(0, 3).map((feature, featureIndex) => (
                                             <span
                                                 key={featureIndex}
-                                                className="bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs font-medium"
+                                                className="bg-green-50 text-green-700 px-2 py-1 rounded text-xs font-medium border border-green-100"
                                             >
                                                 {feature}
                                             </span>
                                         ))}
                                         {project.features.length > 3 && (
-                                            <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs font-medium">
+                                            <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs font-medium border border-gray-200">
                                                 +{project.features.length - 3} more
                                             </span>
                                         )}
@@ -323,10 +331,10 @@ export default function Projects() {
                         <div className="text-center py-16">
                             <div className="text-6xl mb-4">🏗️</div>
                             <h3 className="text-2xl font-bold text-gray-800 mb-4">No Projects Found</h3>
-                            <p className="text-gray-600 mb-6">We do not have any projects in this category yet, but were always working on new ones!</p>
+                            <p className="text-gray-600 mb-6">We do not have any projects in this category yet, but we are always working on new ones!</p>
                             <button
                                 onClick={() => setActiveFilter('all')}
-                                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                                className="bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 hover:from-green-700 hover:to-green-800"
                             >
                                 View All Projects
                             </button>
@@ -343,7 +351,7 @@ export default function Projects() {
                             {/* Close Button */}
                             <button
                                 onClick={() => setSelectedProject(null)}
-                                className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors duration-300 z-10"
+                                className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-red-100 hover:text-red-600 transition-colors duration-300 z-10 border border-gray-200"
                             >
                                 <span className="text-2xl">×</span>
                             </button>
@@ -356,21 +364,19 @@ export default function Projects() {
                                     fill
                                     className="object-cover"
                                 />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                <div className="absolute bottom-4 left-6">
+                                    <h2 className="text-3xl font-bold text-white mb-2">
+                                        {selectedProject.title}
+                                    </h2>
+                                    <div className={`inline-block ${getStatusColor(selectedProject.status)} text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg`}>
+                                        {getStatusText(selectedProject.status)}
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Project Details */}
                             <div className="p-8">
-                                <div className="flex items-start justify-between mb-6">
-                                    <div>
-                                        <h2 className="text-3xl font-bold text-gray-800 mb-2">
-                                            {selectedProject.title}
-                                        </h2>
-                                        <div className={`inline-block ${getStatusColor(selectedProject.status)} text-white px-3 py-1 rounded-full text-sm font-semibold`}>
-                                            {getStatusText(selectedProject.status)}
-                                        </div>
-                                    </div>
-                                </div>
-
                                 <p className="text-gray-600 text-lg leading-relaxed mb-8">
                                     {selectedProject.description}
                                 </p>
@@ -378,34 +384,40 @@ export default function Projects() {
                                 <div className="grid md:grid-cols-2 gap-8">
                                     {/* Project Information */}
                                     <div>
-                                        <h3 className="text-xl font-bold text-gray-800 mb-4">Project Details</h3>
+                                        <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                            <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                            Project Details
+                                        </h3>
                                         <div className="space-y-3">
                                             <div className="flex justify-between border-b border-gray-200 pb-2">
                                                 <span className="text-gray-600">Location:</span>
-                                                <span className="font-semibold">{selectedProject.location}</span>
+                                                <span className="font-semibold text-green-700">{selectedProject.location}</span>
                                             </div>
                                             <div className="flex justify-between border-b border-gray-200 pb-2">
                                                 <span className="text-gray-600">Duration:</span>
-                                                <span className="font-semibold">{selectedProject.duration}</span>
+                                                <span className="font-semibold text-green-700">{selectedProject.duration}</span>
                                             </div>
                                             <div className="flex justify-between border-b border-gray-200 pb-2">
                                                 <span className="text-gray-600">Size:</span>
-                                                <span className="font-semibold">{selectedProject.size}</span>
+                                                <span className="font-semibold text-green-700">{selectedProject.size}</span>
                                             </div>
                                             <div className="flex justify-between border-b border-gray-200 pb-2">
                                                 <span className="text-gray-600">Category:</span>
-                                                <span className="font-semibold capitalize">{selectedProject.category}</span>
+                                                <span className="font-semibold text-green-700 capitalize">{selectedProject.category}</span>
                                             </div>
                                         </div>
                                     </div>
 
                                     {/* Features */}
                                     <div>
-                                        <h3 className="text-xl font-bold text-gray-800 mb-4">Key Features</h3>
+                                        <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                            <span className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                                            Key Features
+                                        </h3>
                                         <div className="grid grid-cols-2 gap-2">
                                             {selectedProject.features.map((feature, index) => (
-                                                <div key={index} className="flex items-center space-x-2 bg-blue-50 p-3 rounded-lg">
-                                                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                                <div key={index} className="flex items-center space-x-2 bg-green-50 p-3 rounded-lg border border-green-100">
+                                                    <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
                                                     <span className="text-gray-700 text-sm">{feature}</span>
                                                 </div>
                                             ))}
@@ -414,14 +426,14 @@ export default function Projects() {
                                 </div>
 
                                 {/* CTA Buttons */}
-                                <div className="flex space-x-4 mt-8 pt-8 border-t border-gray-200">
+                                <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-8 pt-8 border-t border-gray-200">
                                     <Link
                                         href="/contact"
-                                        className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-center flex-1"
+                                        className="bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-center flex-1 hover:from-green-700 hover:to-green-800"
                                     >
                                         Start Similar Project
                                     </Link>
-                                    <button className="border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-full font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-300 flex-1">
+                                    <button className="border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-full font-semibold hover:border-red-500 hover:text-red-600 transition-all duration-300 flex-1">
                                         Download Case Study
                                     </button>
                                 </div>
@@ -432,21 +444,27 @@ export default function Projects() {
             )}
 
             {/* CTA Section */}
-            <section className="py-20 bg-gradient-to-r from-blue-700 to-blue-900 text-white">
+            <section className="py-20 bg-gradient-to-r from-green-700 to-green-900 text-white">
                 <div className="container mx-auto px-6 text-center">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                        Ready to Build Your <span className="text-blue-300">Dream Project</span>?
+                        Ready to Build Your <span className="text-green-300">Dream Project</span>?
                     </h2>
-                    <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                    <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
                         Let us discuss how we can bring your vision to life with the same expertise and quality showcased in our portfolio.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             href="/contact"
-                            className="bg-white text-blue-900 px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                            className="bg-white text-green-900 px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-gray-100"
                         >
                             Start Your Project
                         </Link>
+                        <a
+                            href="tel:+254718811661"
+                            className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-green-900 transition-all duration-300 hover:border-red-500"
+                        >
+                            Call for Consultation
+                        </a>
                     </div>
                 </div>
             </section>
