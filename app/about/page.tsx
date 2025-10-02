@@ -50,20 +50,6 @@ export default function About() {
             image: "/images/team/ceo.jpg",
             experience: "20+ years",
             specialty: "Strategic Planning"
-        },
-        {
-            name: "Edwin Muthanga",
-            role: "Developer",
-            image: "/images/team/architect.jpg",
-            experience: "3 years",
-            specialty: "web development"
-        },
-        {
-            name: "Derrick Kanyoko",
-            role: "Website Developer",
-            image: "/images/team/manager.jpg",
-            experience: "3 years",
-            specialty: "Web Development"
         }
 
     ];
